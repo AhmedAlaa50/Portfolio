@@ -15,11 +15,19 @@ Portfolio
 │  │  ├─ App.tsx
 │  │  ├─ assets
 │  │  ├─ components
-│  │  ├─ context
+│  │  │  ├─ About.tsx
+│  │  │  ├─ Contact.tsx
+│  │  │  ├─ Footer.tsx
+│  │  │  ├─ NavBar.tsx
+│  │  │  ├─ Projects.tsx
+│  │  │  └─ Skills.tsx
+│  │  ├─ constants
 │  │  ├─ hooks
 │  │  ├─ index.css
 │  │  ├─ main.tsx
-│  │  ├─ ui
+│  │  ├─ store
+│  │  ├─ types
+│  │  ├─ utils
 │  │  └─ vite-env.d.ts
 │  ├─ tsconfig.app.json
 │  ├─ tsconfig.json
