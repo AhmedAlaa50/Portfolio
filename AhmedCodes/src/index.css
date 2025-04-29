@@ -1,7 +1,161 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-    --color-custom-green: #1ba098; /* A warm orange */
-    --color-custom-yellow: #deb992; /* A soft purple */
-    --color-custom-dark: #051622;   /* A deep grayish-purple */
+  --color-custom-green: #1ba098;
+  --color-custom-yellow: #deb992;
+  --color-custom-dark: #051622;
+}
+
+@layer utilities {
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
+
+  .animate-slide-down {
+    animation: slide-down 0.3s ease-out;
+  }
+
+  @keyframes icon-scale-color {
+    0% {
+      transform: scale(1);
+      color: var(--color-custom-yellow);
+    }
+    50% {
+      transform: scale(1.2);
+      color: var(--color-custom-green);
+    }
+    100% {
+      transform: scale(1);
+      color: var(--color-custom-yellow);
+    }
+  }
+
+  .animate-icon-scale-color {
+    animation: icon-scale-color 3s ease-in-out infinite;
+    transition:
+      transform 0.3s ease,
+      color 0.3s ease;
+  }
+
+  @keyframes icon-pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .animate-icon-pulse {
+    animation: icon-pulse 1.5s infinite ease-in-out;
+  }
+  @keyframes fade-in-up-scale-color {
+    0% {
+      opacity: 0;
+      transform: translateY(40px) scale(0.8);
+      color: #deb992;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      color: #1ba098;
+    }
+  }
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.3s ease-out;
+  }
+
+  @keyframes fade-in-up-scale {
+    0% {
+      opacity: 0;
+      transform: translateY(40px) scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Default fade-in + scale + color change animation for name */
+  .animate-fade-in-up-scale-color {
+    opacity: 0; /* Ensure hidden initially */
+    animation: fade-in-up-scale-color 1s ease-out forwards;
+  }
+
+  /* Configurable Delay Class for Name with Color */
+  .animate-fade-in-up-scale-color-delay-0 {
+    opacity: 0; /* Ensure hidden initially */
+    animation: fade-in-up-scale-color 1s ease-out forwards;
+    animation-delay: 0s;
+  }
+
+  .animate-fade-in-up-scale-color-delay-0-5 {
+    opacity: 0; /* Ensure hidden initially */
+    animation: fade-in-up-scale-color 1s ease-out forwards;
+    animation-delay: 0.5s;
+  }
+
+  .animate-fade-in-up-scale-color-delay-1 {
+    opacity: 0; /* Ensure hidden initially */
+    animation: fade-in-up-scale-color 1s ease-out forwards;
+    animation-delay: 1s;
+  }
+
+  .animate-fade-in-up-scale-color-delay-2 {
+    opacity: 0; /* Ensure hidden initially */
+    animation: fade-in-up-scale-color 1s ease-out forwards;
+    animation-delay: 2s;
+  }
+
+  /* Fade-in + scale animation for Frontend Developer without color change */
+  .animate-fade-in-up-scale {
+    opacity: 0; /* Ensure hidden initially */
+    animation: fade-in-up-scale 1s ease-out forwards;
+  }
+
+  /* Configurable Delay Class for Frontend Developer */
+  .animate-fade-in-up-scale-delay-0 {
+    opacity: 0; /* Ensure hidden initially */
+    animation: fade-in-up-scale 1s ease-out forwards;
+    animation-delay: 0s;
+  }
+
+  .animate-fade-in-up-scale-delay-0-5 {
+    opacity: 0; /* Ensure hidden initially */
+    animation: fade-in-up-scale 1s ease-out forwards;
+    animation-delay: 0.5s;
+  }
+
+  .animate-fade-in-up-scale-delay-1 {
+    opacity: 0; /* Ensure hidden initially */
+    animation: fade-in-up-scale 1s ease-out forwards;
+    animation-delay: 1s;
+  }
+
+  .animate-fade-in-up-scale-delay-2 {
+    opacity: 0; /* Ensure hidden initially */
+    animation: fade-in-up-scale 1s ease-out forwards;
+    animation-delay: 2s;
+  }
+}
