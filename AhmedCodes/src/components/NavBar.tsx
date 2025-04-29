@@ -56,7 +56,7 @@ const NavBar: React.FC = () => {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="absolute top-full left-0 w-full bg-custom-dark z-50 md:hidden">
+        <div className="absolute top-full left-0 w-full bg-custom-dark z-50 md:hidden shadow-lg">
           <ul className="flex flex-col gap-4 p-4 text-lg font-semibold text-custom-green">
             <li>
               <a href="#home" onClick={() => setMenuOpen(false)}>
