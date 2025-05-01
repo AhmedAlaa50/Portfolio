@@ -1,4 +1,4 @@
-import NavBar from './components/NavBar';
+// import NavBar from './components/NavBar';
 import StartingScreen from './components/StartingScreen';
 import Welcome from './components/Welcome';
 // import About from './components/About';
@@ -10,7 +10,7 @@ import Welcome from './components/Welcome';
 function App() {
   return (
     <main className="bg-[var(--color-custom-dark)]">
-      <NavBar />
+      {/* <NavBar /> */}
       <StartingScreen />
       <Welcome />
       {/* <Skills />
