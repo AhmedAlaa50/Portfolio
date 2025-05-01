@@ -10,7 +10,7 @@ const NavBar: React.FC = () => {
   return (
     <nav className="bg-custom-dark px-4 md:px-8 py-4 md:py-6 text-custom-green fixed top-0 left-0 w-full z-50 shadow-lg transition-all duration-300 ease-in-out">
       <div className="flex justify-between items-center">
-        <h1 className="text-2xl md:text-3xl font-bold text-custom-yellow selection:text-[var(--color-custom-green)]">
+        <h1 className="text-2xl md:text-3xl font-bold text-custom-yellow selection:text-[var(--color-custom-green)] pr-10">
           AhmedCodes
         </h1>
 
