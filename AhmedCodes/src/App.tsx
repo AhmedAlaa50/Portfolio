@@ -9,7 +9,7 @@ import StartingScreen from './components/StartingScreen';
 
 function App() {
   return (
-    <main className="bg-[var(--color-custom-dark)]">
+    <main className="bg-[var(--color-custom-dark)] overflow-hidden">
       <NavBar />
       <StartingScreen />
       {/* <Welcome /> */}
