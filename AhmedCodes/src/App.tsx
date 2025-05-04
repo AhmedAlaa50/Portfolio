@@ -1,24 +1,16 @@
-import NavBar from './components/NavBar';
-import StartingScreen from './components/StartingScreen';
-// import Welcome from './components/Welcome';
-// import About from './components/About';
-// import Contact from './components/Contact';
-// import Footer from './components/Footer';
-// import Projects from './components/Projects';
-// import Skills from './components/Skills';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
+import NavBar from './components/ui/NavBar';
+import ScreenContainer from './components/ui/ScreenContainer';
 
 function App() {
   return (
-    <main className="bg-[var(--color-custom-dark)] overflow-hidden">
-      <NavBar />
-      <StartingScreen />
-      {/* <Welcome /> */}
-      {/* <Skills />
-      <Projects />
-      <About />
-      <Contact />
-      <Footer /> */}
-    </main>
+    <Provider store={store}>
+      <div className="min-h-screen bg-custom-dark flex flex-col align-center">
+        <NavBar />
+        <ScreenContainer />
+      </div>
+    </Provider>
   );
 }
 
