@@ -1,6 +1,6 @@
 const Skills: React.FC = () => {
     return (
-        <section>
+        <section id="skills" className="min-h-screen pt-5 flex flex-col items-center justify-center text-white font-mono select-none px-4 relative">
             <h2>My Skills</h2>
             <ul>
                 <li>JavaScript</li>

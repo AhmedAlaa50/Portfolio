@@ -1,5 +1,4 @@
 import { GlobeAltIcon, CommandLineIcon } from '@heroicons/react/24/outline';
-import DownArrow from './arrows/DownArrow';
 
 const StartingScreen: React.FC = () => {
   return (
@@ -21,7 +20,6 @@ const StartingScreen: React.FC = () => {
         </p>
         <CommandLineIcon className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg-h-14 xl:w-16 xl:h-16 text-[var(--color-custom-yellow)] animate-icon-pulse translate-y-[0.25rem]" />
       </div>
-      <DownArrow sectionId="welcome" />
     </section>
   );
 };

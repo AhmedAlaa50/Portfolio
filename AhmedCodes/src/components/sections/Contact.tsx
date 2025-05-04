@@ -1,6 +1,6 @@
 const Contact: React.FC = () => {
     return (
-        <div>
+        <section id="contact" className="min-h-screen pt-5 flex flex-col items-center justify-center text-white font-mono select-none px-4 relative">
             <h1>Contact Me</h1>
             <form>
                 <div>
@@ -17,7 +17,7 @@ const Contact: React.FC = () => {
                 </div>
                 <button type="submit">Send</button>
             </form>
-        </div>
+        </section>
     );
 };
 
