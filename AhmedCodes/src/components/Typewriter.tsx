@@ -1,9 +1,9 @@
 // src/components/Typewriter.tsx
 import { useEffect, useState } from 'react';
 
-const Typewriter: React.FC = () => {
+const Typewriter: React.FC<{ txt: string }> = ({ txt }) => {
   const [text, setText] = useState('');
-  const fullText = 'Welcome to my website! 👋';
+  const fullText = txt;
   const typingSpeed = 100; // ms
 
   useEffect(() => {
@@ -17,10 +17,10 @@ const Typewriter: React.FC = () => {
     }, typingSpeed);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [fullText]);
 
   return (
-    <div className="h-screen flex items-center justify-center bg-gray-900 text-white text-3xl font-mono select-none">
+    <div className="flex items-center justify-center text-custom-green text-3xl font-mono select-none">
       <span>{text}</span>
     </div>
   );
