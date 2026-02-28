@@ -15,20 +15,45 @@ const Contact: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+  const [submitError, setSubmitError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError('');
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const formspreeId = import.meta.env.VITE_FORMSPREE_FORM_ID;
 
-    setSubmitMessage(
-      'Thank you for your message! I will get back to you soon.'
-    );
-    setFormData({ name: '', email: '', message: '' });
-    setIsSubmitting(false);
+    try {
+      if (formspreeId) {
+        const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          throw new Error(
+            err.error || err.message || `Request failed (${res.status})`
+          );
+        }
+      }
 
-    setTimeout(() => setSubmitMessage(''), 5000);
+      setSubmitMessage(
+        'Thank you for your message! I will get back to you soon.'
+      );
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setSubmitMessage(''), 5000);
+    } catch (err) {
+      const message =
+        err instanceof Error
+          ? err.message
+          : 'Something went wrong. Please try again.';
+      setSubmitError(message);
+      setTimeout(() => setSubmitError(''), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -236,6 +261,15 @@ const Contact: React.FC = () => {
                     className="text-custom-green text-center"
                   >
                     {submitMessage}
+                  </motion.p>
+                )}
+                {submitError && (
+                  <motion.p
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-red-400 text-center"
+                  >
+                    {submitError}
                   </motion.p>
                 )}
               </form>
